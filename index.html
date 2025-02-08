@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=\device-width, initial-scale=1.0">
     <title>GPA Calculator for VTU Colleges</title>
     <link rel="icon" href="icon.jpg" type="image/png">
     <link rel="stylesheet" href="style.css">
@@ -21,60 +21,24 @@
             <th style="width:6%">Total</th>
             <th style="width:6%">Grade</th>
         </tr>
-        <tr>
-            <td>1.</td>
-            <td><input type="text" required></td>
-            <td><input type="number" min="0" max="5" style="width: 50px;" required id="cr1"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="cie1"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="see1"></td>
-            <td><input type="number" style="width: 100px;" readonly id="tot1"></td>
-            <td><input type="number" style="width: 100px;" readonly id="grd1"></td>
-        </tr>
-        <tr>
-            <td>2.</td>
-            <td><input type="text" required></td>
-            <td><input type="number" min="0" max="5" style="width: 50px;" required id="cr2"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="cie2"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="see2"></td>
-            <td><input type="number" style="width: 100px;" readonly id="tot2"></td>
-            <td><input type="number" style="width: 100px;" readonly id="grd2"></td>
-        </tr>
-        <tr>
-            <td>3.</td>
-            <td><input type="text" required></td>
-            <td><input type="number" min="0" max="5" style="width: 50px;" required id="cr3"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="cie3"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="see3"></td>
-            <td><input type="number" style="width: 100px;" readonly id="tot3"></td>
-            <td><input type="number" style="width: 100px;" readonly id="grd3"></td>
-        </tr>
-        <tr>
-            <td>4.</td>
-            <td><input type="text" required></td>
-            <td><input type="number" min="0" max="5" style="width: 50px;" required id="cr4"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="cie4"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="see4"></td>
-            <td><input type="number" style="width: 100px;" readonly id="tot4"></td>
-            <td><input type="number" style="width: 100px;" readonly id="grd4"></td>
-        </tr>
-        <tr>
-            <td>5.</td>
-            <td><input type="text" required></td>
-            <td><input type="number" min="0" max="5" style="width: 50px;" required id="cr5"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="cie5"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="see5"></td>
-            <td><input type="number" style="width: 100px;" readonly id="tot5"></td>
-            <td><input type="number" style="width: 100px;" readonly id="grd5"></td>
-        </tr>
-        <tr>
-            <td>6.</td>
-            <td><input type="text" required></td>
-            <td><input type="number" min="0" max="5" style="width: 50px;" required id="cr6"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="cie6"></td>
-            <td><input type="number" min="0" max="50" style="width: 100px;" required id="see6"></td>
-            <td><input type="number" style="width: 100px;" readonly id="tot6"></td>
-            <td><input type="number" style="width: 100px;" readonly id="grd6"></td>
-        </tr>
+        
+        <!-- Subject Rows -->
+        <script>
+            for (let i = 1; i <= 8; i++) {
+                document.write(`
+                <tr>
+                    <td>${i}.</td>
+                    <td><input type="text" required></td>
+                    <td><input type="number" min="0" max="5" style="width: 50px;" required id="cr${i}"></td>
+                    <td><input type="number" min="0" max="50" style="width: 100px;" required id="cie${i}"></td>
+                    <td><input type="number" min="0" max="50" style="width: 100px;" required id="see${i}"></td>
+                    <td><input type="number" style="width: 100px;" readonly id="tot${i}"></td>
+                    <td><input type="number" style="width: 100px;" readonly id="grd${i}"></td>
+                </tr>
+                `);
+            }
+        </script>
+
         <tr>
             <td colspan="5">Total Marks Obtained (CIE + SEE)</td>
             <td><input type="number" style="width: 100px;" readonly id="total"></td>
